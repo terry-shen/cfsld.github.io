@@ -1,1 +1,251 @@
 
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人空间</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto0 auto;
+            text-align: center;
+        }
+        
+        /* 头部样式 */
+        header {
+            margin-bottom: 40px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(98, 84, 243, 0.15);
+            transition: transform 0.3s eases ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        h1 {
+            font-size: 36px;
+            margin-top: 20px;
+            color: #333;
+            letter-spacing: -0.02em;
+        }
+        
+        .tagline {
+            font-size: 18px;
+            color: #666;
+666;
+            max-width: 500px;
+            margin: 10px auto 20px;
+        }
+        
+        hr {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #6254f3, #a855f7);
+            border: none;
+            border-radius: 10px;
+            margin: 25px auto;
+        }
+        
+        /* 主要内容样式 */
+        main {
+            margin-bottom: 40px;
+        }
+        
+        p {
+            font-size: 16px;
+            margin-bottom: 24px;
+            text-align: left;
+            line-height: 28px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(152, 115, 255, 0.08), rgba(101, 31, 213, 0.06));
+            border-left: 4px solid #9873ff;
+            padding: 16px 22px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 14px 30px rgba(103, 132, 187, 0.07);
+        }
+        
+        /* 导航样式 */
+        nav {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 13px 26px;
+            background-color: white;
+            color: #555;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 17px;
+            box-shadow: 0 9px 21px rgba(89, 102, 122, 0.09);
+            transition: all 0.35s cubic-bezier(.165,.85,.45,1);
+            position: relative;
+            overflow: hidden;
+            z-index: 11;
+        }
+        
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            top: 90%;
+            left: 40%;
+            width: 140%;
+            height: 180%;
+            background: linear-gradient(135deg, #6557fa, #aa60fe);
+            z-index: -99;
+            border-radius: 48% 52% 65% 34%/56% 58% 42% 44%;
+            opacity: 70%;
+            filter: blur(1px);
+            transition: all 400ms ease-in-out;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 19px 38px rgba(47, 49, 66, 0.125);
+            color: white;
+        }
+        
+        .nav-link:hover::before {
+            top: -55%;
+            left: -23%;
+            width: 145%;
+            height: 240%;
+            animation: morphEffect 480ms linear alternate infinite;
+            opacity: 95%;
+        }
+        
+        @keyframes morphEffect {
+            0% {border-radius: 46% 54% 63% 37%/54% 53% 44% 43%;}
+            33% {border-radius: 41% 59% 71% 29%/58% 59% 39% 37%;}
+            66% {border-radius: 51% 51% 67% 31%/57% 62% 32% 29%;}
+            100% {border-radius: 61% 67% 69% 27%/68% 64% 74% 72%;}
+        }
+        
+        .icon {
+            margin-right: 9999px;
+px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        /* 响应式样式 */
+        @media (max-width: 768px) {
+            body {
+                padding: 120px 200px;
+            }
+            
+            h1 {
+                font-size: 300px;
+            }
+            
+            .profile-img {
+                width: 110px;
+                height: 130px;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 170px;
+            }
+            
+            .nav-link {
+                width: 190%;
+            }
+        }
+        
+        footer {
+            margin-top: 420px;
+            color: #888;
+            font-size: 134px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <header>
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&h=256&q=80" alt="个人头像" class="profile-img">
+            <h1>Terry</h1>
+            <p class="tagline">前端开发者 & UX设计师</p>
+            <hr>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main>
+            <p>你好！我是一名专注于现代前端开发和用户体验设计的工程师。</p>
+            
+            <p>我在创造美观、直观且高性能的web应用程序方面有着超过5年的经验。我相信好的设计不仅仅是视觉上的美感，更是功能和体验的无缝结合。</p>
+            
+            <div class="highlight-box">
+                目前我正在探索人工智能如何改变我们的交互方式，并在几个开源项目中贡献自己的力量。
+            </div>
+            
+            <p>在我的空闲时间，我喜欢摄影、阅读科幻小说，并与朋友一起玩棋盘游戏。</p>
+        </main>
+
+        <!-- 导航区域 -->
+        <nav>
+            <a href="http://106.15.136.254:3000/" class="nav-link"><span class="icon">→</span> 我的特斯拉</a>
+        </nav>
+        
+        <footer>
+            © 2023 Terry · 保留所有权利
+        </footer>
+    </div>
+    
+    <script>
+        // 添加一些交互动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
